@@ -7,10 +7,12 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const redisClient = require('redis').createClient();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 app.use(express.json());
@@ -31,6 +33,7 @@ const formattedDateTime = currentDate.toLocaleString('en-GB', {
 }).replace(',', '');
 
 app.use(session({
+   store: new RedisStore({ client: redisClient }),
     secret:  process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
