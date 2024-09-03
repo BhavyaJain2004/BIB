@@ -10,7 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "bcrypt": "^5.1.1",
     "connect-redis": "^7.1.1",
     "dotenv": "^16.4.5",
