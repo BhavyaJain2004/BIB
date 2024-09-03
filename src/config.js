@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+    const mongoose = require('mongoose');
 const { defaultMaxListeners } = require('nodemailer/lib/xoauth2');
 
-async function main(){
-    await mongoose.connect('mongodb://localhost:27017/bankdata');
+async function main() {
+    await mongoose.connect('mongodb+srv://Bhavyajain2004:2004@cluster0.8qple.mongodb.net/bankdata?retryWrites=true&w=majority');
 }
 main().then(()=>{
     console.log("Connected to DB Successfully");
