@@ -43,7 +43,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.set('views', path.join(__dirname, '../views'));
 
 const currentDate = new Date();
+const istDate = new Date(currentDate.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 const formattedDateTime = currentDate.toLocaleString('en-GB', {
+  timeZone : 'Asia/Kolkata',
   day: '2-digit',
   month: '2-digit',
   year: 'numeric',
@@ -209,15 +211,17 @@ app.post('/addFunds',async (req,res)=>{
         req.session.user.Balance = checkAccountNumber.Balance;
 
         const currentDate = new Date();
+        const istDate = new Date(currentDate.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
         const formattedDateTime = currentDate.toLocaleString('en-GB', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        }).replace(',', '');
+        timeZone : 'Asia/Kolkata',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).replace(',', '');
 
         const creditTransaction = new CreditTransaction({
           Date : formattedDateTime,
@@ -359,14 +363,16 @@ app.post('/fundTransfer',async (req,res)=>{
         const transactionId = "TXN" + Date.now();
 
         const currentDate = new Date();
+        const istDate = new Date(currentDate.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
         const formattedDateTime = currentDate.toLocaleString('en-GB', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
+          timeZone : 'Asia/Kolkata',
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
         }).replace(',', '');
 
         const debitTransaction = new DebitTransaction({
