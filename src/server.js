@@ -7,8 +7,11 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-const RedisStore = require('connect-redis')(session);
-const redisClient = require('redis').createClient();
+
+const RedisStore = require('connect-redis').default;
+const redis = require('redis');
+const redisClient = redis.createClient();
+
 
 const app = express();
 const port = process.env.PORT || 3000;
