@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add funds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="form">
+       
+        <form action="/home" method="get">
+           
+            <div class="table-container">
+           
+            <table id="transactionHistory" id="Transactiontable">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th> Sender Account Number</th>
+                    <th> Reciever Account Number</th>
+                    <th>Amount </th>
+                    <th>Balance after Transaction</th>
+                    <th>Transaction ID</th>
+                    <th>Transaction Type</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                    <% transactions.forEach(transaction => { %>
+                        <tr>
+                            <td><%= transaction.Date.toLocaleString() %></td>
+                            <td><%= transaction.Description %></td>
+                            <td><%= transaction.SenderAccountNumber %></td>
+                            <td><%= transaction.ReceiverAccountNumber %></td>
+                            <td><%= transaction.Amount %></td>
+                            <td><%= transaction.Balance %></td>
+                            <td><%= transaction.TransactionID %></td>
+                            <td style="color: <%= transaction.TransactionType === 'Credit' ? 'limegreen' : 'red' %>">
+                                <%= transaction.TransactionType %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+
+
+            </table>
+            </div>
+            
+
+           
+            <div class="buttons">
+            <button type="submit"  id="back">Back</button>
+           
+        
+            </div>
+    
+    
+        </form>
+       
+        </div>
+
+
+    
+
+
+</body>
+</html>

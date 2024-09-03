@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add funds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form">
+        <form action="/home" method="get">
+            <h1>Welcome <%=Name%></h1>
+           
+    
+         
+            
+            <label for="AccountHolderName">Account Holder Name : </label>
+            <input  id="AccountHolderName" name="AccountHolderName"  value="<%=Name%>" readonly>
+          
+            <label for="AccountHolderFatherName">Account Holder's Father Name : </label>
+            <input  id="AccountHolderFatherName" name="AccountHolderFatherName" value="<%=FatherName%>" readonly>
+
+            <label for="Age">Age :</label>
+            <input id="Age" name="Age" value="<%= Age %>" readonly>
+
+            <label for="balance">Account Number :</label>
+            <input  id="AccountNumber" name="AccountNumber" value="<%=AccountNumber%>" readonly>
+
+          
+
+           
+            <div class="buttons">
+            <button type="submit"  id="back">Back</button>
+           
+        
+            </div>
+    
+    
+        </form>
+       
+        </div>
+
+    
+
+
+</body>
+</html>
