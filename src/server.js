@@ -1,20 +1,36 @@
+require('dotenv').config(); 
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { user, Counter, DebitTransaction,CreditTransaction } = require('./config');
-const session = require('express-session');
+
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-require('dotenv').config();
 
 const RedisStore = require('connect-redis').default;
 const redis = require('redis');
-const redisClient = redis.createClient();
+const redisClient = redis.createClient({
+  url:'redis://localhost:6379'
+});
+
+redisClient.on('error', (err) => {
+  console.error('Redis Client Error', err);
+});
+
+(async () => {
+  try {
+    await redisClient.connect();
+    console.log('Connected to Redis');
+  } catch (err) {
+    console.error('Failed to connect to Redis', err);
+  }
+})();
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port =3000;
 
 
 app.use(express.json());
@@ -35,7 +51,7 @@ const formattedDateTime = currentDate.toLocaleString('en-GB', {
 }).replace(',', '');
 
 app.use(session({
-   store: new RedisStore({ client: redisClient }),
+    store: new RedisStore({ client: redisClient }),
     secret:  process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
@@ -51,6 +67,8 @@ function isAuthenticated(req,res,next){
     }
 
 }
+
+
 
 app.get('/', (req, res) => {
     if(req.session.user) {
@@ -446,4 +464,6 @@ app.get('/transactionHistory', isAuthenticated , async(req,res)=>{
 
 app.listen(port,(()=>{
     console.log("Port running on Port No " +port);
+    
+
 }))
