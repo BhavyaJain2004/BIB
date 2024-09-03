@@ -1,4 +1,4 @@
-    const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const { defaultMaxListeners } = require('nodemailer/lib/xoauth2');
 
 async function main() {
