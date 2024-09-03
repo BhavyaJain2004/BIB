@@ -1,10 +1,9 @@
 {
   "name": "bank1",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node src/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -13,11 +12,13 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "bcrypt": "^5.1.1",
+    "connect-redis": "^7.1.1",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "mongoose": "^8.5.4",
-    "nodemailer": "^6.9.14"
+    "nodemailer": "^6.9.14",
+    "redis": "^4.7.0"
   }
 }
