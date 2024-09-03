@@ -4,30 +4,33 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { user, Counter, DebitTransaction,CreditTransaction } = require('./config');
-
+const { createClient } = require('redis');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-
 const RedisStore = require('connect-redis').default;
 const redis = require('redis');
-const redisClient = redis.createClient({
-  url:'redis://localhost:6379'
-});
 
-redisClient.on('error', (err) => {
+
+const redisclient = createClient({
+    password: process.env.REDIS_PASSWORD,
+    socket: {
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT
+    }
+});
+redisclient.on('error', (err) => {
   console.error('Redis Client Error', err);
 });
 
 (async () => {
   try {
-    await redisClient.connect();
-    console.log('Connected to Redis');
+      await redisclient.connect();
+      console.log('Connected to Redis');
   } catch (err) {
-    console.error('Failed to connect to Redis', err);
+      console.error('Failed to connect to Redis', err);
   }
 })();
-
 
 const app = express();
 const port =3000;
@@ -51,7 +54,7 @@ const formattedDateTime = currentDate.toLocaleString('en-GB', {
 }).replace(',', '');
 
 app.use(session({
-    store: new RedisStore({ client: redisClient }),
+    store: new RedisStore({ client: redisclient }),
     secret:  process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
