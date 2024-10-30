@@ -31,5 +31,6 @@ Express: Web framework for Node.js.
 MongoDB: NoSQL database for storing user and transaction data.
 bcrypt: Password hashing library to ensure secure storage of user passwords.
 
-![Uploading image.png…]()
+![Uploading image.png
+
 
