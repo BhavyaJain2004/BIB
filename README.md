@@ -25,10 +25,13 @@ The Bank Management System is a robust, full-stack web application designed to s
 
 ![Transfer Funds Interface](https://github.com/user-attachments/assets/ad544c68-e70c-47c4-8e35-58c1e1c5a8d8)
 *Successful Transfer Notification:*
+<br>
 
 ![image](https://github.com/user-attachments/assets/317bdda4-5284-4baf-9cd8-209ec37442b0)
+<br>
  
 *Insufficient Balance Alert:*
+<br>
 ![image](https://github.com/user-attachments/assets/c96fa333-1908-46a2-8fda-de389358ebc5)
 
 
