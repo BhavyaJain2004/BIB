@@ -1,6 +1,5 @@
 # Bank Management System
-
-![Banner Image](https://raw.githubusercontent.com/your-username/your-repo-name/main/assets/bank-management-system-banner.png) ## Overview
+Overview
 The Bank Management System is a robust, full-stack web application designed to simulate core banking functionalities. Built with **Node.js**, **Express.js**, and **MongoDB**, it provides users with a secure and intuitive platform for managing personal bank accounts, executing real-time transactions, and accessing comprehensive financial history. Emphasizing security and efficiency, the system incorporates **bcrypt** for password encryption and leverages **Redis** for enhanced performance. The application is currently hosted on Render.
 
 ## Features
@@ -26,6 +25,17 @@ The Bank Management System is a robust, full-stack web application designed to s
 
 ![Transfer Funds Interface](https://github.com/user-attachments/assets/ad544c68-e70c-47c4-8e35-58c1e1c5a8d8)
 *Successful Transfer Notification:*
+
+![image](https://github.com/user-attachments/assets/317bdda4-5284-4baf-9cd8-209ec37442b0)
+
+
+
+A Pop Comes if Balance is not sufficient : 
+
+![image](https://github.com/user-attachments/assets/c96fa333-1908-46a2-8fda-de389358ebc5)
+
+
+
 ![Successful Transfer Pop-up](https://github.com/user-attachments/assets/317bdda4-5284-4baf-9cd8-209ec37422b0)
 *Insufficient Balance Alert:*
 ![Insufficient Balance Pop-up](https://github.com/user-attachments/assets/c96fa433-1908-46a2-8fda-de389358ebc5)
