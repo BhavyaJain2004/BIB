@@ -27,18 +27,12 @@ The Bank Management System is a robust, full-stack web application designed to s
 *Successful Transfer Notification:*
 
 ![image](https://github.com/user-attachments/assets/317bdda4-5284-4baf-9cd8-209ec37442b0)
-
-
-
-A Pop Comes if Balance is not sufficient : 
-
+ 
+*Insufficient Balance Alert:*
 ![image](https://github.com/user-attachments/assets/c96fa333-1908-46a2-8fda-de389358ebc5)
 
 
 
-![Successful Transfer Pop-up](https://github.com/user-attachments/assets/317bdda4-5284-4baf-9cd8-209ec37422b0)
-*Insufficient Balance Alert:*
-![Insufficient Balance Pop-up](https://github.com/user-attachments/assets/c96fa433-1908-46a2-8fda-de389358ebc5)
 
 ### 4. Real-time Balance Inquiry
 * **Instant Updates:** Users can view their current account balance, updated in real-time after every transaction.
@@ -91,7 +85,7 @@ Make sure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git) # Replace with your actual repo URL
+    git clone [https://github.com/BhavyaJain2004/BIB.git](https://github.com/BhavyaJain2004/BIB.git) 
     cd bank-management-system
     ```
 
@@ -108,8 +102,8 @@ Make sure you have the following installed:
     ```dotenv
     PORT=5000
     MONGO_URI=your_mongodb_connection_string # e.g., mongodb://localhost:27017/bankdb or your Atlas URI
-    JWT_SECRET=your_jwt_secret_key # A strong, random string
-    REDIS_URI=your_redis_connection_string # e.g., redis://127.0.0.1:6379
+    JWT_SECRET=your_jwt_secret_key
+    REDIS_URI=your_redis_connection_string
     # Add any other environment variables your project uses (e.g., for email services, etc.)
     ```
     * **MONGO_URI:** If using MongoDB Atlas, get your connection string from the Atlas dashboard.
