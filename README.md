@@ -2,6 +2,8 @@
 Overview
 The Bank Management System is a robust, full-stack web application designed to simulate core banking functionalities. Built with **Node.js**, **Express.js**, and **MongoDB**, it provides users with a secure and intuitive platform for managing personal bank accounts, executing real-time transactions, and accessing comprehensive financial history. Emphasizing security and efficiency, the system incorporates **bcrypt** for password encryption and leverages **Redis** for enhanced performance. The application is currently hosted on Render.
 
+<br>
+
 ## Features
 
 ### 1. Secure User Authentication & Account Management
